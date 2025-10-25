@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eFootball League Hub - Tournament Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Skip link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-trophy" aria-hidden="true"></i>
+                <span>eFootball League Hub</span>
+            </div>
+            <div class="nav-menu" id="navMenu" role="menubar">
+                <a href="#home" class="nav-link" role="menuitem" aria-label="Go to home section">Home</a>
+                <a href="#tournaments" class="nav-link" role="menuitem" aria-label="Go to tournaments section">Tournaments</a>
+                <a href="#leaderboard" class="nav-link" role="menuitem" aria-label="Go to leaderboard section">Leaderboard</a>
+                <a href="#rewards" class="nav-link" role="menuitem" aria-label="Go to rewards section">Rewards</a>
+                <a href="#community" class="nav-link" role="menuitem" aria-label="Go to community section">Community</a>
+            </div>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false" role="button" tabindex="0">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="loginBtn" aria-label="Open login modal">Login</button>
+                <button class="btn btn-primary" id="signupBtn" aria-label="Open sign up modal">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="main-content">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Welcome to <span class="highlight">eFootball League Hub</span>!
+                </h1>
+                <p class="hero-subtitle">
+                    Join exciting eFootball Mobile tournaments and prove your skills against players from all over the world!
+                </p>
+                <p class="hero-description">
+                    Our platform makes it easy to register, compete, and win rewards — all in one place.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-user-plus"></i>
+                        <span>🎮 Simple sign-up system</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>🏆 Daily & weekly tournaments</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-gem"></i>
+                        <span>💰 Real prizes & rankings</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <span>👥 Fair play and active community</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <p class="cta-text">Ready to show your talent?</p>
+                    <p class="cta-subtext">Create your team, join a tournament, and become the next eFootball champion!</p>
+                <button class="btn btn-primary btn-large" id="joinTournamentBtn" aria-label="Join a tournament now">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                    Join Tournament Now
+                </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="game-preview">
+                    <div class="trophy-animation">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-icon">⚽</div>
+                        <div class="floating-icon">🏆</div>
+                        <div class="floating-icon">⭐</div>
+                        <div class="floating-icon">🎮</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Tournaments Section -->
+    <section id="tournaments" class="tournaments-section" aria-labelledby="tournaments-title">
+        <div class="container">
+            <h2 class="section-title" id="tournaments-title">Active Tournaments</h2>
+            <div class="tournament-filters" role="tablist" aria-label="Filter tournaments by type">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="tournamentsGrid">All</button>
+                <button class="filter-btn" data-filter="daily" role="tab" aria-selected="false" aria-controls="tournamentsGrid">Daily</button>
+                <button class="filter-btn" data-filter="weekly" role="tab" aria-selected="false" aria-controls="tournamentsGrid">Weekly</button>
+                <button class="filter-btn" data-filter="monthly" role="tab" aria-selected="false" aria-controls="tournamentsGrid">Monthly</button>
+            </div>
+            
+            <div class="tournaments-grid" id="tournamentsGrid" role="tabpanel" aria-live="polite" aria-label="Tournament listings">
+                <!-- Tournaments will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard-section">
+        <div class="container">
+            <h2 class="section-title">Top Players</h2>
+            <div class="leaderboard-container">
+                <div class="leaderboard-header">
+                    <div class="rank-header">Rank</div>
+                    <div class="player-header">Player</div>
+                    <div class="points-header">Points</div>
+                    <div class="wins-header">Wins</div>
+                </div>
+                <div class="leaderboard-list" id="leaderboardList">
+                    <!-- Leaderboard will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section id="rewards" class="rewards-section">
+        <div class="container">
+            <h2 class="section-title">Rewards & Prizes</h2>
+            <div class="rewards-grid">
+                <div class="reward-card">
+                    <div class="reward-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Champion Rewards</h3>
+                    <p>Exclusive in-game items, real money prizes, and championship titles</p>
+                    <div class="reward-value">$500+</div>
+                </div>
+                <div class="reward-card">
+                    <div class="reward-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Weekly Prizes</h3>
+                    <p>Consistent rewards for active players and tournament participants</p>
+                    <div class="reward-value">$50-200</div>
+                </div>
+                <div class="reward-card">
+                    <div class="reward-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Daily Bonuses</h3>
+                    <p>Login bonuses, participation rewards, and special event prizes</p>
+                    <div class="reward-value">$10-50</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <h2 class="section-title">Community & Fair Play</h2>
+            <div class="community-features">
+                <div class="community-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Anti-Cheat System</h3>
+                    <p>Advanced monitoring ensures fair competition for all players</p>
+                </div>
+                <div class="community-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Active Community</h3>
+                    <p>Join discussions, share strategies, and connect with fellow players</p>
+                </div>
+                <div class="community-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated support team to help with any questions or issues</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal" role="dialog" aria-labelledby="signup-title" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" aria-label="Close sign up modal" role="button" tabindex="0">&times;</span>
+            <h2 id="signup-title">Join eFootball League Hub</h2>
+            <form id="signupForm" novalidate>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required aria-describedby="username-error" autocomplete="username">
+                    <div id="username-error" class="error-message" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required aria-describedby="email-error" autocomplete="email">
+                    <div id="email-error" class="error-message" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required aria-describedby="password-error" autocomplete="new-password">
+                    <div id="password-error" class="error-message" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="teamName">Team Name</label>
+                    <input type="text" id="teamName" name="teamName" required aria-describedby="teamName-error" autocomplete="organization">
+                    <div id="teamName-error" class="error-message" aria-live="polite"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" aria-describedby="signup-status">Create Account</button>
+                <div id="signup-status" class="form-status" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal" role="dialog" aria-labelledby="login-title" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" aria-label="Close login modal" role="button" tabindex="0">&times;</span>
+            <h2 id="login-title">Login to Your Account</h2>
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" name="username" required aria-describedby="login-username-error" autocomplete="username">
+                    <div id="login-username-error" class="error-message" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" required aria-describedby="login-password-error" autocomplete="current-password">
+                    <div id="login-password-error" class="error-message" aria-live="polite"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" aria-describedby="login-status">Login</button>
+                <div id="login-status" class="form-status" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>eFootball League Hub</h3>
+                    <p>The ultimate platform for eFootball Mobile tournaments</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#tournaments">Tournaments</a></li>
+                        <li><a href="#leaderboard">Leaderboard</a></li>
+                        <li><a href="#rewards">Rewards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Rules & Regulations</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 eFootball League Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
